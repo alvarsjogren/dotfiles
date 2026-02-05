@@ -1,0 +1,100 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: #011627;
+    color: #d6deeb;
+}
+
+#workspaces,
+#clock,
+#custom-loadavg,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray {
+    padding: 0 10px;
+    margin: 4px 3px;
+}
+
+/* Workspaces */
+#workspaces button {
+    padding: 0 6px;
+    color: #5f7e97;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    margin: 2px 1px;
+}
+
+#workspaces button:hover {
+    background: #1d3b53;
+    color: #d6deeb;
+}
+
+#workspaces button.active {
+    background: #1d3b53;
+    color: #7fdbca;
+}
+
+#workspaces button.urgent {
+    background: #ef5350;
+    color: #011627;
+}
+
+#clock {
+    color: #7fdbca;
+}
+
+#custom-loadavg,
+#cpu,
+#memory,
+#network,
+#pulseaudio {
+    color: #5f7e97;
+}
+
+#cpu.warning,
+#memory.warning {
+    color: #ecc48d;
+}
+
+#cpu.critical,
+#memory.critical {
+    color: #ef5350;
+}
+
+#network.disconnected {
+    color: #ef5350;
+}
+
+#pulseaudio.muted {
+    color: #ef5350;
+}
+
+#tray {
+    padding: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    background: #ef5350;
+}
+
+tooltip {
+    background: #011627;
+    border: 1px solid #1d3b53;
+    border-radius: 4px;
+}
+
+tooltip label {
+    color: #d6deeb;
+    padding: 4px;
+}
