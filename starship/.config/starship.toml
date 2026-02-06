@@ -13,8 +13,8 @@ $line_break\
 $character"""
 
 [character]
-success_symbol = "[>](bold #7fdbca)"
-error_symbol = "[>](bold #ef5350)"
+success_symbol = "[❯](bold #7fdbca)"
+error_symbol = "[❯](bold #ef5350)"
 
 [directory]
 style = "#82aaff"
@@ -23,11 +23,11 @@ truncate_to_repo = true
 
 [git_branch]
 format = "[$symbol$branch]($style) "
-symbol = " "
+symbol = " "
 style = "#c792ea"
 
 [git_status]
-format = '([$all_status$ahead_behind]($style) )'
+format = "([$all_status$ahead_behind]($style) )"
 style = "#ecc48d"
 modified = "~"
 untracked = "?"
@@ -41,30 +41,30 @@ min_time = 2_000
 
 [c]
 format = "[$symbol($version)]($style) "
-symbol = " "
+symbol = " "
 style = "#82aaff"
 
 [rust]
 format = "[$symbol($version)]($style) "
-symbol = " "
+symbol = " "
 style = "#ef5350"
 
 [golang]
 format = "[$symbol($version)]($style) "
-symbol = " "
+symbol = " "
 style = "#7fdbca"
 
 [python]
 format = "[$symbol($version)]($style) "
-symbol = " "
+symbol = " "
 style = "#ecc48d"
 
 [nodejs]
 format = "[$symbol($version)]($style) "
-symbol = " "
+symbol = " "
 style = "#22da6e"
 
 [lua]
 format = "[$symbol($version)]($style) "
-symbol = " "
+symbol = " "
 style = "#82aaff"
