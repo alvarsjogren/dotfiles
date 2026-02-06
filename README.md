@@ -11,6 +11,7 @@ Hyprland desktop environment configuration for Arch Linux.
 | **wofi** | Application launcher |
 | **mako** | Notification daemon |
 | **kitty** | Terminal emulator |
+| **wallpapers** | Desktop wallpapers (swww) |
 
 All configs use the **Night Owl** color scheme with **JetBrainsMono Nerd Font**.
 
@@ -25,9 +26,9 @@ papirus-icon-theme ttf-jetbrains-mono-nerd stow
 ## Installation
 
 ```bash
-git clone <repo-url> ~/dotfiles
+git clone git@github.com:alvarsjogren/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-stow hypr waybar wofi mako kitty -t ~
+stow hypr waybar wofi mako kitty wallpapers -t ~
 ```
 
 ## Uninstalling a package
