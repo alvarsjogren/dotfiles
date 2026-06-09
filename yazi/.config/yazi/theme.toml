@@ -1,0 +1,116 @@
+# =============================================================================
+# Wallhaven Polllj — Yazi theme
+# =============================================================================
+
+[mgr]
+cwd = { fg = "#E1C4AA" }
+
+hovered         = { fg = "#040A1A", bg = "#DFAC70" }
+preview_hovered = { underline = true }
+
+find_keyword  = { fg = "#DFAC70", italic = true }
+find_position = { fg = "#B58AAE", bg = "reset", italic = true }
+
+marker_copied   = { fg = "#8FA17A", bg = "#8FA17A" }
+marker_cut      = { fg = "#9C6D6F", bg = "#9C6D6F" }
+marker_marked   = { fg = "#6FA89E", bg = "#6FA89E" }
+marker_selected = { fg = "#DFAC70", bg = "#DFAC70" }
+
+count_copied   = { fg = "#040A1A", bg = "#8FA17A" }
+count_cut      = { fg = "#040A1A", bg = "#9C6D6F" }
+count_selected = { fg = "#040A1A", bg = "#DFAC70" }
+
+tab_active   = { fg = "#040A1A", bg = "#DFAC70" }
+tab_inactive = { fg = "#A4A7CD", bg = "#222441" }
+tab_width    = 1
+
+border_symbol = "│"
+border_style  = { fg = "#384778" }
+
+[mode]
+normal_main = { fg = "#040A1A", bg = "#DFAC70", bold = true }
+normal_alt  = { fg = "#DFAC70", bg = "#222441" }
+select_main = { fg = "#040A1A", bg = "#8FA17A", bold = true }
+select_alt  = { fg = "#8FA17A", bg = "#222441" }
+unset_main  = { fg = "#040A1A", bg = "#9C6D6F", bold = true }
+unset_alt   = { fg = "#9C6D6F", bg = "#222441" }
+
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "#222441", bg = "#222441" }
+
+mode_normal = { fg = "#040A1A", bg = "#DFAC70", bold = true }
+mode_select = { fg = "#040A1A", bg = "#8FA17A", bold = true }
+mode_unset  = { fg = "#040A1A", bg = "#9C6D6F", bold = true }
+
+progress_label  = { fg = "#E1E9F2", bold = true }
+progress_normal = { fg = "#DFAC70", bg = "#222441" }
+progress_error  = { fg = "#9C6D6F", bg = "#222441" }
+
+permissions_t = { fg = "#DFAC70" }
+permissions_r = { fg = "#E1C4AA" }
+permissions_w = { fg = "#9C6D6F" }
+permissions_x = { fg = "#8FA17A" }
+permissions_s = { fg = "#7477A1" }
+
+[pick]
+border   = { fg = "#DFAC70" }
+active   = { fg = "#B58AAE", bold = true }
+inactive = {}
+
+[input]
+border   = { fg = "#DFAC70" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+[confirm]
+border     = { fg = "#DFAC70" }
+title      = { fg = "#DFAC70" }
+content    = {}
+list       = {}
+btn_yes    = { fg = "#040A1A", bg = "#DFAC70", bold = true }
+btn_no     = { fg = "#E1E9F2" }
+btn_labels = [ " [Y]es ", " (N)o " ]
+
+[completion]
+border   = { fg = "#DFAC70" }
+active   = { fg = "#040A1A", bg = "#DFAC70" }
+inactive = {}
+
+[tasks]
+border  = { fg = "#DFAC70" }
+title   = {}
+hovered = { fg = "#DFAC70", underline = true }
+
+[which]
+mask            = { bg = "#0B1125" }
+cand            = { fg = "#6FA89E" }
+rest            = { fg = "#7477A1" }
+desc            = { fg = "#E1C4AA" }
+separator       = "  "
+separator_style = { fg = "#384778" }
+
+[help]
+on      = { fg = "#DFAC70" }
+run     = { fg = "#6FA89E" }
+desc    = { fg = "#A4A7CD" }
+hovered = { bg = "#384778", bold = true }
+footer  = { fg = "#0B1125", bg = "#E1E9F2" }
+
+[notify]
+title_info  = { fg = "#8FA17A" }
+title_warn  = { fg = "#DFAC70" }
+title_error = { fg = "#9C6D6F" }
+
+[filetype]
+rules = [
+  { mime = "image/*",                                  fg = "#8FBEB4" },
+  { mime = "{audio,video}/*",                          fg = "#DFAC70" },
+  { mime = "application/{,g}zip",                      fg = "#B58AAE" },
+  { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#B58AAE" },
+  { url = "*", is = "orphan", fg = "#9C6D6F" },
+  { url = "*", is = "exec",   fg = "#8FA17A" },
+  { url = "*/", fg = "#7C8AC0" },
+]

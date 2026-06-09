@@ -12,16 +12,25 @@ Hyprland desktop environment configuration for Arch Linux.
 | **mako** | Notification daemon |
 | **kitty** | Terminal emulator |
 | **starship** | Shell prompt — git status, language versions |
+| **gtk** | GTK3/GTK4 color overrides (themes Nemo + GTK apps) |
+| **qt** | Qt theming via qt5ct (Fusion + custom palette) |
+| **yazi** | Terminal file manager (Super+Y) — image previews in kitty |
+| **fastfetch** | System info splash |
 | **wallpapers** | Desktop wallpapers (swww) |
 
-All configs use the **Night Owl** color scheme with **JetBrainsMono Nerd Font**.
+File managers: **yazi** (terminal, primary) and **nemo** (GUI, `Super+E`).
+
+All configs use the **Wallhaven Polllj** color scheme with **JetBrainsMono Nerd Font**.
 
 ## Dependencies
 
 ```
 hyprland waybar wofi mako kitty starship swww grim slurp wl-copy
 brightnessctl networkmanager nm-applet polkit-kde-agent
-papirus-icon-theme ttf-jetbrains-mono-nerd stow
+papirus-icon-theme ttf-jetbrains-mono-nerd stow fastfetch
+nemo yazi ffmpegthumbnailer poppler fd fzf zoxide jq imagemagick
+qt5ct kvantum                       # Qt theming
+bibata-cursor-theme                 # AUR — cursor theme
 ```
 
 ## Installation
@@ -29,7 +38,7 @@ papirus-icon-theme ttf-jetbrains-mono-nerd stow
 ```bash
 git clone git@github.com:alvarsjogren/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-stow hypr waybar wofi mako kitty starship wallpapers -t ~
+stow hypr waybar wofi mako kitty starship gtk qt yazi fastfetch wallpapers -t ~
 ```
 
 ## Uninstalling a package

@@ -1,0 +1,198 @@
+/* =========================================================================
+   Wallhaven Polllj — GTK3 theme
+   Stock Adwaita (GTK3) bakes colors in at compile time, so @define-color
+   alone isn't enough — explicit widget selectors below force the palette.
+   ========================================================================= */
+
+/* Core palette */
+@define-color base      #040A1A;
+@define-color mantle    #0B1125;
+@define-color crust     #131A32;
+@define-color surface0  #222441;
+@define-color surface1  #29345C;
+@define-color surface2  #384778;
+@define-color overlay0  #4B5C92;
+@define-color overlay1  #7477A1;
+@define-color overlay2  #A4A7CD;
+@define-color text      #E1E9F2;
+@define-color subtext0  #B29098;
+@define-color gold      #DFAC70;
+@define-color peach     #E1C4AA;
+@define-color red       #9C6D6F;
+
+/* GTK3 semantic names (covers widgets that DO read them) */
+@define-color theme_bg_color          @base;
+@define-color theme_fg_color          @text;
+@define-color theme_base_color        @mantle;
+@define-color theme_text_color        @text;
+@define-color theme_selected_bg_color @surface2;
+@define-color theme_selected_fg_color @peach;
+@define-color insensitive_bg_color    @mantle;
+@define-color insensitive_fg_color    @overlay1;
+@define-color insensitive_base_color  @base;
+@define-color borders                 @surface0;
+@define-color accent_color            @gold;
+@define-color accent_bg_color         @gold;
+@define-color accent_fg_color         @base;
+@define-color warning_color           @gold;
+@define-color error_color             @red;
+@define-color success_color           #8FA17A;
+
+/* ---- Explicit widget overrides ------------------------------------------ */
+
+/* Base surfaces */
+window, .background, dialog, assistant, messagedialog, .csd {
+    background-color: @base;
+    color: @text;
+}
+
+/* Content views: file list, tree, icon view, text */
+.view, iconview, treeview.view, textview, textview text,
+list, flowbox, viewport {
+    background-color: @base;
+    color: @text;
+}
+.view:hover, treeview.view:hover, row:hover,
+list row:hover, flowboxchild:hover {
+    background-color: @surface1;
+}
+.view:selected, treeview.view:selected, row:selected,
+list row:selected, iconview:selected, flowboxchild:selected,
+.view:selected:focus, treeview.view:selected:focus {
+    background-color: @surface2;
+    color: @peach;
+}
+
+/* Header bar / toolbars */
+headerbar, .titlebar, .toolbar, toolbar,
+.primary-toolbar, .nemo-window .toolbar {
+    background-color: @crust;
+    color: @text;
+    border-color: @surface0;
+    box-shadow: none;
+}
+/* Keep bars navy when the window is unfocused (backdrop) */
+headerbar:backdrop, .titlebar:backdrop,
+.toolbar:backdrop, toolbar:backdrop,
+.primary-toolbar:backdrop, .nemo-window .toolbar:backdrop,
+.menubar:backdrop, menubar:backdrop {
+    background-color: @crust;
+    color: @overlay2;
+    border-color: @surface0;
+}
+window:backdrop, .background:backdrop {
+    background-color: @base;
+    color: @overlay2;
+}
+.view:backdrop, treeview.view:backdrop {
+    background-color: @base;
+    color: @overlay2;
+}
+.sidebar:backdrop, placessidebar:backdrop, stacksidebar:backdrop {
+    background-color: @mantle;
+    color: @overlay2;
+}
+button:backdrop, entry:backdrop {
+    background-color: @surface0;
+    color: @overlay2;
+}
+
+/* Sidebar (Nemo places) */
+.sidebar, .sidebar .view, placessidebar, placessidebar .view,
+stacksidebar, stacksidebar .view {
+    background-color: @mantle;
+    color: @text;
+}
+.sidebar row:selected, placessidebar row:selected {
+    background-color: @surface2;
+    color: @peach;
+}
+
+/* Buttons */
+button {
+    background-image: none;
+    background-color: @surface0;
+    color: @text;
+    border-color: @surface1;
+    box-shadow: none;
+}
+button:hover { background-color: @surface1; }
+button:active, button:checked {
+    background-color: @surface2;
+    color: @gold;
+}
+button.flat { background-color: transparent; border-color: transparent; }
+button.flat:hover { background-color: @surface1; }
+button.suggested-action {
+    background-color: @gold;
+    color: @base;
+}
+button.destructive-action {
+    background-color: @red;
+    color: @base;
+}
+
+/* Entries */
+entry, .entry, spinbutton, searchbar entry {
+    background-image: none;
+    background-color: @surface0;
+    color: @text;
+    border-color: @surface1;
+    caret-color: @gold;
+}
+entry:focus, entry:focus-within { border-color: @gold; }
+entry selection, .view selection, label selection {
+    background-color: @surface2;
+    color: @peach;
+}
+
+/* Menus / popovers / context menus */
+menu, .menu, .context-menu, popover, popover.background, .csd .popup {
+    background-color: @surface0;
+    color: @text;
+    border: 1px solid @surface1;
+}
+menuitem, .menuitem, modelbutton { color: @text; }
+menuitem:hover, .menuitem:hover, modelbutton:hover {
+    background-color: @surface1;
+    color: @gold;
+}
+
+/* Notebook tabs / panes / separators */
+notebook, notebook header, notebook stack, stack { background-color: @base; }
+notebook tab { background-color: @crust; color: @overlay1; }
+notebook tab:checked { color: @gold; background-color: @base; }
+separator { background-color: @surface0; }
+paned > separator { background-color: @crust; }
+
+/* Scrollbars */
+scrollbar { background-color: @base; border: none; }
+scrollbar slider {
+    background-color: @surface1;
+    border-radius: 8px;
+    min-width: 6px;
+    min-height: 6px;
+}
+scrollbar slider:hover { background-color: @surface2; }
+
+/* Accent-driven controls */
+progressbar progress, levelbar block.filled { background-color: @gold; }
+check:checked, radio:checked {
+    background-color: @gold;
+    color: @base;
+    border-color: @gold;
+}
+switch:checked { background-color: @gold; }
+switch:checked slider { background-color: @base; }
+spinner { color: @gold; }
+*:link, link { color: @gold; }
+
+/* Path bar / linked button groups */
+.path-bar button, .linked > button { background-color: @surface0; }
+
+/* Tooltips */
+tooltip, tooltip.background {
+    background-color: @crust;
+    color: @text;
+    border: 1px solid @surface1;
+}

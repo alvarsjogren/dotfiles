@@ -22,7 +22,7 @@
         "calendar": {
             "mode": "month",
             "format": {
-                "today": "<span color='#7aa2f7'><b>{}</b></span>"
+                "today": "<span color='#DFAC70'><b>{}</b></span>"
             }
         },
         "interval": 1
