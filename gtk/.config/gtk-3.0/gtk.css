@@ -196,3 +196,31 @@ tooltip, tooltip.background {
     color: @text;
     border: 1px solid @surface1;
 }
+
+/* =========================================================================
+   wofi (app launcher) — a GTK3 layer-shell app that inherits this file at a
+   higher provider priority than its own style.css, so the generic
+   button/entry/window/.view rules above bleed into its rows (every result
+   row gets painted @surface0, the window gaps go @base, and wofi's selected
+   highlight is lost). Re-assert wofi's palette here, scoped to its node IDs
+   (#outer-box/#inner-box/#entry/#input/#img — names GTK file managers never
+   use, so Nemo is unaffected).
+   ========================================================================= */
+#outer-box, #inner-box { background-color: @mantle; }
+#scroll, #text, #img { background-color: transparent; }
+/* Each row's clickable child button is what the global `button` rule paints,
+   so reset it here (scoped to wofi's list) and let #entry carry the bg. */
+#inner-box button, #entry, #entry box {
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    border: none;
+}
+#entry:selected, #entry:hover,
+#inner-box button:selected, #inner-box button:hover {
+    background-color: @surface1;
+}
+#input, #input * {
+    background-color: @mantle;
+    background-image: none;
+}
