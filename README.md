@@ -16,7 +16,7 @@ Hyprland desktop environment configuration for Arch Linux.
 | **qt** | Qt theming via qt5ct (Fusion + custom palette) |
 | **yazi** | Terminal file manager (Super+Y) — image previews in kitty |
 | **fastfetch** | System info splash |
-| **wallpapers** | Desktop wallpapers (swww) |
+| **wallpapers** | Desktop wallpapers (awww) |
 
 File managers: **yazi** (terminal, primary) and **nemo** (GUI, `Super+E`).
 
@@ -25,7 +25,7 @@ All configs use the **Wallhaven Polllj** color scheme with **JetBrainsMono Nerd 
 ## Dependencies
 
 ```
-hyprland waybar wofi mako kitty starship swww grim slurp wl-copy
+hyprland waybar wofi mako kitty starship awww grim slurp wl-copy
 brightnessctl networkmanager nm-applet polkit-kde-agent
 papirus-icon-theme ttf-jetbrains-mono-nerd stow fastfetch
 nemo yazi ffmpegthumbnailer poppler fd fzf zoxide jq imagemagick
