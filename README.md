@@ -6,8 +6,8 @@ Hyprland desktop environment configuration for Arch Linux.
 
 | Package | Description |
 |---------|-------------|
-| **hypr** | Hyprland window manager — dwindle layout, NVIDIA 40-series, dual monitor (DP-1 144Hz + HDMI-A-1 60Hz) |
-| **waybar** | Status bar — workspaces, clock, CPU, memory, network, audio, tray |
+| **hypr** | Hyprland window manager — dwindle layout, per-host GPU/monitor config (see below) |
+| **waybar** | Status bar — workspaces, clock, CPU, memory, network, battery, audio, tray |
 | **wofi** | Application launcher |
 | **mako** | Notification daemon |
 | **kitty** | Terminal emulator |
@@ -39,6 +39,25 @@ bibata-cursor-theme                 # AUR — cursor theme
 git clone git@github.com:alvarsjogren/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 stow hypr waybar wofi mako kitty starship gtk qt yazi fastfetch wallpapers -t ~
+```
+
+### Per-host hypr config (laptop vs PC)
+
+GPU env vars and monitor layout differ between machines (PC: NVIDIA, dual monitor; laptop:
+Intel iGPU, single `eDP-1`). `hyprland.conf` sources a local, gitignored `host.conf` symlink
+so both machines share one `main` branch instead of diverging into separate branches:
+
+```
+hypr/.config/hypr/hosts/pc.conf       # tracked — NVIDIA, dual monitor
+hypr/.config/hypr/hosts/laptop.conf   # tracked — Intel iGPU, eDP-1
+hypr/.config/hypr/host.conf           # gitignored symlink -> one of the above, made once per machine
+```
+
+One-time setup on a new machine, after stowing `hypr`:
+
+```bash
+cd ~/.config/hypr
+ln -sf hosts/laptop.conf host.conf   # or hosts/pc.conf
 ```
 
 ## Uninstalling a package

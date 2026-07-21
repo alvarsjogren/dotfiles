@@ -12,3 +12,6 @@ Thumbs.db
 .env
 *.secret
 credentials*
+
+# Per-machine local config
+hypr/.config/hypr/host.conf

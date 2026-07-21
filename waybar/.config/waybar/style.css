@@ -14,6 +14,7 @@ window#waybar {
 #custom-loadavg,
 #cpu,
 #memory,
+#battery,
 #network,
 #pulseaudio,
 #tray {
@@ -53,18 +54,21 @@ window#waybar {
 #custom-loadavg,
 #cpu,
 #memory,
+#battery,
 #network,
 #pulseaudio {
     color: #7477A1;
 }
 
 #cpu.warning,
-#memory.warning {
+#memory.warning,
+#battery.warning {
     color: #DFAC70;
 }
 
 #cpu.critical,
-#memory.critical {
+#memory.critical,
+#battery.critical {
     color: #9C6D6F;
 }
 
