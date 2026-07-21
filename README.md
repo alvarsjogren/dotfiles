@@ -12,6 +12,7 @@ Hyprland desktop environment configuration for Arch Linux.
 | **mako** | Notification daemon |
 | **kitty** | Terminal emulator |
 | **starship** | Shell prompt — git status, language versions |
+| **zsh** | Zsh config (Oh My Zsh, plugins: zsh-autosuggestions, zsh-syntax-highlighting) |
 | **gtk** | GTK3/GTK4 color overrides (themes Nemo + GTK apps) |
 | **qt** | Qt theming via qt5ct (Fusion + custom palette) |
 | **yazi** | Terminal file manager (Super+Y) — image previews in kitty |
@@ -38,7 +39,19 @@ bibata-cursor-theme                 # AUR — cursor theme
 ```bash
 git clone git@github.com:alvarsjogren/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-stow hypr waybar wofi mako kitty starship gtk qt yazi fastfetch wallpapers -t ~
+stow hypr waybar wofi mako kitty starship gtk qt yazi fastfetch wallpapers zsh -t ~
+```
+
+### Zsh / Oh My Zsh
+
+Oh My Zsh itself and its third-party plugins are separate upstream clones, not part of this repo — only `.zshrc` is stowed. To rebuild the full setup on a new machine:
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+cd ~/dotfiles
+stow zsh -t ~
 ```
 
 ## Uninstalling a package
