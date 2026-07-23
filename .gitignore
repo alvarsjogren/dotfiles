@@ -15,3 +15,4 @@ credentials*
 
 # Per-machine local config
 hypr/.config/hypr/host.conf
+hypr/.config/hypr/host.lua

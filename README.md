@@ -57,20 +57,37 @@ stow zsh -t ~
 ### Per-host hypr config (laptop vs PC)
 
 GPU env vars and monitor layout differ between machines (PC: NVIDIA, dual monitor; laptop:
-Intel iGPU, single `eDP-1`). `hyprland.conf` sources a local, gitignored `host.conf` symlink
+Intel iGPU, single `eDP-1`). `hyprland.lua` requires a local, gitignored `host.lua` symlink
 so both machines share one `main` branch instead of diverging into separate branches:
 
 ```
-hypr/.config/hypr/hosts/pc.conf       # tracked — NVIDIA, dual monitor
-hypr/.config/hypr/hosts/laptop.conf   # tracked — Intel iGPU, eDP-1
-hypr/.config/hypr/host.conf           # gitignored symlink -> one of the above, made once per machine
+hypr/.config/hypr/hosts/pc.lua        # tracked — NVIDIA, dual monitor
+hypr/.config/hypr/hosts/laptop.lua    # tracked — Intel iGPU, eDP-1
+hypr/.config/hypr/host.lua            # gitignored symlink -> one of the above, made once per machine
 ```
 
 One-time setup on a new machine, after stowing `hypr`:
 
 ```bash
 cd ~/.config/hypr
-ln -sf hosts/laptop.conf host.conf   # or hosts/pc.conf
+ln -sfn hosts/laptop.lua host.lua   # or hosts/pc.lua
+```
+
+### Hyprland config format (Lua)
+
+Hyprland 0.55 deprecated the old `hyprlang` `.conf` format in favour of Lua; support for
+`.conf` is due to be dropped within a release or two. This repo uses the Lua format
+(`hyprland.lua`, requires Hyprland >= 0.55).
+
+The legacy `hyprland.conf` / `hosts/*.conf` files are kept as a rollback. Hyprland only reads
+`hyprland.conf` when no `hyprland.lua` exists, so renaming `hyprland.lua` and restarting
+restores the old config. **The config format is chosen at startup** — `hyprctl reload` will not
+switch between them.
+
+For editor completion and type checking, point lua-ls at the stub Hyprland ships:
+
+```lua
+-- .luarc.json  ->  "workspace.library": ["/usr/share/hypr/stubs"]
 ```
 
 ## Uninstalling a package
