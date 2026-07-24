@@ -130,6 +130,13 @@ hl.gesture({
     action    = "workspace",
 })
 
+-- 4-finger swipe down to lock
+hl.gesture({
+    fingers   = 4,
+    direction = "down",
+    action    = function() hl.exec_cmd("hyprlock") end,
+})
+
 
 -- =============================================================================
 -- Keybindings
